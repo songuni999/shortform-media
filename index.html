@@ -9,7 +9,7 @@
 <p class="muted" style="font-size:14px">Signs in with TikTok Login Kit (user.info.basic, video.upload). Only the account owner uses this.</p></div>
 <script>
 const TT_KEY="sbawrodm76byf7wzwy";
-document.getElementById("tt").href="https://www.tiktok.com/v2/auth/authorize/?"+new URLSearchParams({client_key:TT_KEY,scope:"user.info.basic,video.upload",response_type:"code",redirect_uri:"https://songuni999.github.io/shortform-media/callback.html",state:"local8735"});
+document.getElementById("tt").href="https://www.tiktok.com/v2/auth/authorize/?"+new URLSearchParams({client_key:TT_KEY,scope:"user.info.basic,video.upload",response_type:"code",redirect_uri:"https://songuni999.github.io/shortform-media/callback.html",state:"local8735",disable_auto_auth:"1"});
 </script>
 <h2>What the tool does</h2><ul>
 <li>Uploads the owner's own videos with <code>videos.insert</code> (scope: youtube.upload).</li>
