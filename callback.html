@@ -4,7 +4,8 @@
 <p><code id="code" style="word-break:break-all;font-size:15px"></code></p><button id="cp">Copy code</button></div>
 <script>
 const q=new URLSearchParams(location.search);const c=q.get("code"),e=q.get("error_description")||q.get("error");
-document.getElementById("code").textContent=c||"";if(!c)document.getElementById("msg").textContent=e?("Authorization failed: "+e):"No authorization code in this address.";
+document.getElementById("code").textContent=c||"";
+const st=q.get("state")||"";if(c&&st.startsWith("local")){document.getElementById("msg").textContent="Sending the authorization to Shortform Studio on this computer...";setTimeout(()=>location.href="http://127.0.0.1:"+st.slice(5)+"/cb?"+q.toString(),600);}if(!c)document.getElementById("msg").textContent=e?("Authorization failed: "+e):"No authorization code in this address.";
 document.getElementById("cp").onclick=()=>navigator.clipboard.writeText(c||"").then(()=>document.getElementById("cp").textContent="Copied");
 </script>
 <footer>Shortform Studio · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer></main></body></html>

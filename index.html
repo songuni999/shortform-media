@@ -4,6 +4,13 @@
 <div class="card"><p class="yt"><svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#FF0000"/><path d="M11 5.5v9l7.5-4.5z" fill="#fff"/></svg> Uses YouTube API Services</p>
 <p>Shortform Studio is an internal tool operated by one independent creator. It uploads short vertical videos that the creator produced themselves (an original illustrated fiction series) to <b>their own YouTube channel</b>, sets titles, descriptions and the "altered or synthetic content" disclosure, and schedules publishing.</p>
 <p>The tool is not offered to the public. Only the channel owner signs in with Google (OAuth 2.0) and authorizes access to their own channel. No other users' data is accessed.</p></div>
+<div class="card"><p><b>TikTok</b> — Shortform Studio also sends the creator's finished videos to <b>their own TikTok inbox as drafts</b> (Content Posting API, scope video.upload). The creator reviews and posts each draft in the TikTok app.</p>
+<p><a id="tt" class="btn" href="#" style="display:inline-block;background:#111;color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700">Connect TikTok</a></p>
+<p class="muted" style="font-size:14px">Signs in with TikTok Login Kit (user.info.basic, video.upload). Only the account owner uses this.</p></div>
+<script>
+const TT_KEY="sbawrodm76byf7wzwy";
+document.getElementById("tt").href="https://www.tiktok.com/v2/auth/authorize/?"+new URLSearchParams({client_key:TT_KEY,scope:"user.info.basic,video.upload",response_type:"code",redirect_uri:"https://songuni999.github.io/shortform-media/callback.html",state:"local8735"});
+</script>
 <h2>What the tool does</h2><ul>
 <li>Uploads the owner's own videos with <code>videos.insert</code> (scope: youtube.upload).</li>
 <li>Reads the owner's channel name and the statistics of their own videos (scope: youtube.readonly) to check that publishing succeeded.</li>
